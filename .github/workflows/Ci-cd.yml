@@ -46,7 +46,7 @@ jobs:
           script: |
             eval "$(ssh-agent -s)"
             ssh-add ~/.ssh/ostad
-            cd /home/ubuntu/Ci-Cd
+            home/ubuntu/CI-CD_Deployment
             git pull
             npm install
             pm2 restart all
