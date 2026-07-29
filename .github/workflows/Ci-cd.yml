@@ -36,12 +36,12 @@ jobs:
     needs: test
 
     steps:
-      - name: Deploy to EC2
+      - name: Deploy to EC2 instances
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.KEY }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu/Ci-Cd
@@ -49,3 +49,4 @@ jobs:
             npm install
             pm2 restart all
             sudo systemctl restart nginx
+             
