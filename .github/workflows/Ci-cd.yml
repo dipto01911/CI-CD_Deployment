@@ -45,7 +45,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu/Ci-Cd
-            git pull origin main
+            git pull 
             npm install
             pm2 restart all
             sudo systemctl restart nginx
