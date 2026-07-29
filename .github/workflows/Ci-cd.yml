@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  
 
 jobs:
   test:
@@ -53,3 +53,7 @@ jobs:
             pm2 save
             sudo systemctl restart nginx
             cat src/public/index.html
+            git remote -v
+            git branch -vv
+            git config --get remote.origin.url
+            git log --oneline -3
