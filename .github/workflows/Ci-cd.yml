@@ -44,9 +44,12 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            set -e
             cd /home/ubuntu/Ci-Cd
-            git pull 
+            git fetch origin
+            git reset --hard origin/main
             npm install
-            pm2 restart all
+            pm2 restart Ci-Cd
+            pm2 save
             sudo systemctl restart nginx
-             
+            cat src/public/index.html
