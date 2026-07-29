@@ -45,8 +45,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             eval "$(ssh-agent -s)"
-            ssh-add ~/.ssh/ostad
-            home/ubuntu/CI-CD_Deployment
+            ssh-add ~/.ssh/
+            cd /home/ubuntu/CI-CD_Deployment
             git pull
             npm install
             pm2 restart all
