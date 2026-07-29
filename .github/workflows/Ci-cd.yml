@@ -46,8 +46,7 @@ jobs:
           script: |
             set -e
             cd /home/ubuntu/Ci-Cd
-            git fetch origin
-            git reset --hard origin/main
+            git pull
             npm install
             pm2 restart Ci-Cd
             pm2 save
