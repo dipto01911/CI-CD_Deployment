@@ -48,7 +48,7 @@ jobs:
             cd /home/ubuntu/Ci-Cd
             git pull
             npm install
-            pm2 restart Ci-Cd
+            pm2 restart all
             pm2 save
             sudo systemctl restart nginx
             cat src/public/index.html
